@@ -1,6 +1,6 @@
-require 'spec_helper' 
+require 'spec_helper'
 
-describe "FriendlyForwardings" do 
+describe "FriendlyForwardings" do
 
 	it "should forward to the requested page after signin" do 
 		user = Factory(:user)
@@ -10,4 +10,4 @@ describe "FriendlyForwardings" do
 		click_button
 		response.should render_template('users/edit')
 	end 
-end 
+end 	
