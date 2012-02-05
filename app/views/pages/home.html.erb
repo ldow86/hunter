@@ -1,14 +1,14 @@
 <script src="javascripts/galleria/galleria-1.2.6.min.js"></script>
 <div id="gallery">
 	<% @displayRecentPhotos.each do |photo| %>
-		<%= image_tag "/photos/#{photo.id}/image", :alt => photo.description, :width => 100 %>
+		<%= image_tag image_photo_path(photo), :alt => photo.description, :width => 100 %>
 	<% end %>
 </div>
 <script>
 	Galleria.loadTheme('javascripts/galleria/themes/classic/galleria.classic.min.js');
 	$("#gallery").galleria({
-		width: 300,
-		height: 300
+		width: 600,
+		height: 600
 	});
 </script>
 

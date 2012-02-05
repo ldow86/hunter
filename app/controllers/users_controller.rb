@@ -1,22 +1,10 @@
 class UsersController < ApplicationController
-	before_filter :authenticate, :only => [:edit, :update]
+	before_filter :authenticate, :only => [:show, :edit, :update]
 	before_filter :correct_user, :only => [:edit, :update]
 
 	def show
 		@user = User.find(params[:id])
 		@title = @user.name 
-	end 
-
-	def create 
-		@user = User.new(params[:user])
-		if @user.save 
-			sign_in @user 
-			flash[:success] = "Welcome to Through Hunter's Eyes!"
-			redirect_to @user 
-		else 
-			@title = "Sign in" 
-			render 'new'
-		end 
 	end 
 
 	def edit
