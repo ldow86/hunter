@@ -1,8 +1,11 @@
 Hunter::Application.routes.draw do
-  get "sessions/new"
+	get "sessions/new"
 
-  resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+	resources :users
+	resources :sessions, :only => [:new, :create, :destroy]
+	resources :photos, :only => [:new, :create, :show] do
+		get 'image', :on => :member
+	end
 
 	match '/contact', :to => 'pages#contact'
 	match '/abouthunter', :to => 'pages#abouthunter'
