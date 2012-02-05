@@ -58,14 +58,6 @@ describe SessionsController do
 				response.should redirect_to(user_path(@user))
 			end 
 		end
-
-		describe "success" do 
-
-			it "should sign the user in" do 
-				post :create, :user => @attr 
-				controller.should be_signed_in
-			end 
-		end  
 	end
 
 	describe "DELETE 'destroy'" do 

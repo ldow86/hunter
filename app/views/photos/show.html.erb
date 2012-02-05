@@ -1,5 +1,5 @@
 <div id="photoshow">
 	<p id="imagenumber"><%= @photo.id %></p>
-	<%= image_tag "/photos/#{@photo.id}/image", :alt => "Image", :width => 300 %>
+	<%= image_tag image_photo_path(@photo), :alt => "Image", :width => 300 %>
 	<h1><%= @photo.description %></h1>
 </div>

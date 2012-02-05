@@ -23,9 +23,9 @@ $('[placeholder]').parents('form').submit(function() {
 });
 </script>
 <h1>Upload Photos</h1>
-<p>Click browse to find the image that you want to upload. You can enter an optional caption in the second field. Click submit when you are ready to upload your image and caption. </p>
+<p>Click browse to find the image that you want to upload. Click submit when you are ready to upload your image and/or caption. </p>
 
-<%= form_for(:photo, @photo, :url=>{:action=>'create'}, :html=>
+<%= form_for(@photo, :as =>:photo, :url=>{:action=>'create'}, :html=>
 	{:multipart=>true}) do |form| %>
 
 	<% if !@photo.nil? %>

@@ -1,8 +1,8 @@
 class PhotosController < ApplicationController
 
-	before_filter :authenticate, :only => [:new, :create]
+	before_filter :authenticate, :only => [:new, :create, :delete, :deletePhotos]
 
-	caches_page :image 
+	caches_page :image
 
 	def new
 		@title = "Upload Photo" 
@@ -13,13 +13,13 @@ class PhotosController < ApplicationController
 		@photo = Photo.find(params[:id])
 	end 
 
-	def create 
+	def create
 		@photo = Photo.new(params[:photo])
 		if @photo.save
 			flash[:success] = "Your photo has been uploaded"
 			redirect_to :controller => 'photos', :action => 'new'
 		else
-			@title = "Upload Photo" 			
+			@title = "Upload Photos" 			
 			render 'new'
 		end 
 	end

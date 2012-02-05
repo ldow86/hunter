@@ -2,10 +2,10 @@
 
 <%= will_paginate @list %>
 
-<ul class="list">
+<ul class="archivesList">
 	<% @list.each do |photo| %>
 		<li>
-			<a href="<%= photo_path photo %>"/><%= image_tag "/photos/#{photo.id}/image", :alt => photo.description, :width => 100 %></a>
+			<a href="<%= photo_path photo %>"/><%= image_tag image_photo_path(photo), :alt => photo.description, :width => 150 %></a>
 		</li>
 	<% end %>
 </ul>
