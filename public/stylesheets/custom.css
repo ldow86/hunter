@@ -24,11 +24,11 @@ section h1 {
 	font-size: 200%;
 }
 
-nav {
+nav.headerMenu {
 	background: #FE642E;
 }
 
-nav ul { 
+nav.headerMenu ul { 
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -36,11 +36,11 @@ nav ul {
 }
 
 
-nav ul li {
+nav.headerMenu ul li {
 	float: right;
 }
 
-nav ul li a:link, nav ul li a:visited {
+nav.headerMenu ul li a:link, nav.headerMenu ul li a:visited {
 	display: block;
 	width: 120px;
 	font-weight: bold;
@@ -52,7 +52,7 @@ nav ul li a:link, nav ul li a:visited {
 	text-transform: uppercase;
 }
 
-nav ul li a:hover, a:active {
+nav.headerMenu ul li a:hover, nav.headerMenu ul li a:active {
 	background-color: #DF3A01;
 }
 
@@ -135,14 +135,75 @@ td.sidebar {
 	background: #ffc;
 }
 
-ul {
-	list-style-type: none;
-}
-
 #photoshow {
 	width: 300px;
 	margin: auto;
 }
+
+#imagenumber {
+	margin-bottom: 0;
+}
+
+/* Styling for caption field in photos/new page */
+input.placeholder {
+	color: #aaa;
+}
+
+div#gallery { 
+	margin: auto;
+	width: 600px;
+}
+
+/*Styling for index and delete pages */
+
+ul.archivesList {
+	display: inline;
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul.archivesList li {
+	display: inline;
+	padding-left: 0;
+	vertical-align: top;
+}
+
+ul.deleteList {
+	display: inline;
+	list-style-type: none;
+}
+
+ul.deleteList li {
+	display: inline;
+}
+
+/*Styling for user menu links below footer */
+
+nav.userMenu ul { 
+	list-style-type: none;
+	margin: auto;
+}
+
+nav.userMenu ul li {
+	display: inline;
+}
+
+nav.userMenu ul li a {
+	color: black;
+	margin: auto;
+}
+
+.userMenu {
+	text-align: center;
+}
+
+nav.userMenu ul li a:link, ul.userMenu li a:visited {
+	width: 10px;
+	padding: 5px;
+	color: black;
+}
+	
+
 
 
 
