@@ -1,16 +1,7 @@
-<h1>Through Hunter's Eyes</h1>
-<br />
-<br />
-<br />
-<br />
-<br />
-<p>
-	Hunter's most recent photos go here
-</p>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+
+
+<% @displayRecentPhotos.each do |photo| %>
+	<%= image_tag "/photos/#{photo.id}/image", :alt => photo.description, :width => 100 %>
+<% end %>
+
 
