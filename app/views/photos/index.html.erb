@@ -1,0 +1,14 @@
+<h1>Archives</h1>
+
+<%= will_paginate @list %>
+
+<ul class="list">
+	<% @list.each do |photo| %>
+		<li>
+			<a href="<%= photo_path photo %>"/><%= image_tag "/photos/#{photo.id}/image", :alt => photo.description, :width => 100 %></a>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate @list %> 
+
