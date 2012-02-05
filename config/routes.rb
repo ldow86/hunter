@@ -1,4 +1,11 @@
 Hunter::Application.routes.draw do
+	match '/contact', :to => 'pages#contact'
+	match '/abouthunter', :to => 'pages#abouthunter'
+	match '/aboutautism', :to => 'pages#aboutautism'
+	match '/archives', :to => 'pages#archives'
+
+	root :to => 'pages#home'
+
 	get "pages/home"
 	get "pages/contact"
 	get "pages/abouthunter"

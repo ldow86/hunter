@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Through Hunter's Eyes | <%= @title %></title>
+		<title><%= title %></title>
 		<%= csrf_meta_tag %>
+		<%= render 'layouts/stylesheets' %>
 	</head>
 	<body>
-		<%= yield %>
+		<div class="containter">
+			<%= render 'layouts/header' %>
+			<section>
+				<%= yield %>
+			</section>
+		</div>
 	</body>
 </html>
