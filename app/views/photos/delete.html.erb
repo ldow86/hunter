@@ -1,0 +1,23 @@
+<script type="text/javascript">
+	function show_confirm() {
+		return confirm("Are you sure you want to delete selected photos?");
+	}
+</script>
+<form onsubmit="return show_confirm();" action="deletePhotos">
+<h1>Delete Photos</h1>
+
+<%= will_paginate @list %>
+
+<ul class="deleteList">
+	<% @list.each do |photo| %>
+		<li>
+			<a href="<%= photo_path photo %>"/><%= image_tag image_photo_path(photo), :alt => photo.description, :width => 150 %></a>
+			<input type="checkbox" name="ids[]" value="photo id"/>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate @list %><br />
+<input type="submit" value="Delete" /> 
+</form>
+
