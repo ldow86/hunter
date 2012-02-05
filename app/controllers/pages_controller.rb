@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+	before_filter :current_user
+
 	def home
 		@title = "Home"
 		@displayRecentPhotos = Photo.order("created_at DESC").limit(2)
@@ -22,6 +24,10 @@ class PagesController < ApplicationController
 
 	def admin
 		@title = "Admin"
+	end 
+
+	def submitContactForm
+		RequestMailer.request_email(params[:petitioner],params[:replyEmailAddress],params[:imageNumber], params[:description]).deliver 
 	end 
 
 end
