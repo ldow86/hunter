@@ -1,9 +1,10 @@
-.container {
-	width: 710px;
+.container {	
 }
 
 body {
 	background: #D8D8D8;
+	width: 700px;
+	margin: auto;
 } 
 
 header {
@@ -12,13 +13,131 @@ header {
 
 section {
 	margin-top : 1em;
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 120%;
 	padding: 20px;
-	background: #fff;
+	background: #fff;	
 }
 
 section h1 {
 	font-size: 200%;
 }
+
+nav {
+	background: #FE642E;
+}
+
+nav ul { 
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+}
+
+
+nav ul li {
+	float: right;
+}
+
+nav ul li a:link, nav ul li a:visited {
+	display: block;
+	width: 120px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FE642E;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav ul li a:hover, a:active {
+	background-color: #DF3A01;
+}
+
+footer {
+	margin-top: 1em;
+	text-align: center;
+	background-color: #FE642E;
+	color: #FFFFFF;
+	padding: 5px;
+}
+
+#footerlink {
+	color: #FFFFFF;
+}
+
+/* Form styling */
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+/* Error messages */
+
+.field_with_errors {
+	margin-top: 10px;
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+
+.field_with_errors label {
+	color: #fff;
+}
+
+#error_explanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+
+#error_explanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+
+#error_explanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+
+/* User show page */
+
+table.profile {
+	width: 100%;
+	margin-bottom: 0;
+}
+
+td.main {
+	width: 70%;
+	padding: 1em;
+}
+
+td.sidebar {
+	width: 30%;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;
+}
+
+
+
+
+
 
 

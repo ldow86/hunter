@@ -1,8 +1,16 @@
 Hunter::Application.routes.draw do
+  get "sessions/new"
+
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
 	match '/contact', :to => 'pages#contact'
 	match '/abouthunter', :to => 'pages#abouthunter'
 	match '/aboutautism', :to => 'pages#aboutautism'
 	match '/archives', :to => 'pages#archives'
+	match '/admin', :to => 'pages#admin'
+	match '/signin', :to => 'sessions#new'
+	match '/signout', :to => 'sessions#destroy'
 
 	root :to => 'pages#home'
 
@@ -11,6 +19,7 @@ Hunter::Application.routes.draw do
 	get "pages/abouthunter"
 	get "pages/aboutautism"
 	get "pages/archives"
+	get "pages/admin"
 
 	# The priority is based upon order of creation:
 	# first created -> highest priority.

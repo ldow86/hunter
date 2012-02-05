@@ -1,2 +1,51 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<head>
+<script type="text/javascript">
+function validateForm()
+{
+	var x=document.forms["contactForm"]["name"].value;
+	if (x==null || x=="")
+	{
+		alert("Name must be filled out");
+		return false;
+	}
+	var y=document.forms["contactForm"]["email"].value;
+	if (y==null || y=="")
+	{
+		alert("Email address must be filled out");
+		return false;
+	}
+	var z=document.forms["contactForm"]["number"].value;
+	if (z==null || z=="")
+	{
+		alert("Image Number must be filled out");
+		return false;
+	}
+}
+
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\
+".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA
+-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+</script>
+</head>
+
+<h1>Contact Information</h1>
+<p>
+	Please do not use any of Hunter's photos without permission. If you would like to obtain permission to use any of Hunter's images please submit the form below. The Image Number for each photo is located above the left corner of the photo. Please include a valid email address and a brief description of why you would like permission to use the photo. 
+</p>
+<p>
+	There is a small fee for permission to use Hunter's images. This fee goes towards Hunter's care. Thank you!
+</p>
+<body>
+<form name="contactForm" action="demo_form.asp" onsubmit=" return validateForm()" method="post">
+Your name: <br /><input type="text" name="name"><br />
+Your email address: <br /><input type="text" name="email"><br />
+Image Number: <br /><input type="text" name="number"><br />
+Description of why you would like to use photos:<br /><textarea name="description"></textarea>
+<input type="submit" value="Submit">
+</form>
+</body>
+

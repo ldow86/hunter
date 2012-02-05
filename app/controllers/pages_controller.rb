@@ -19,4 +19,8 @@ class PagesController < ApplicationController
 		@title = "Archives"
 	end 
 
+	def admin
+		@title = "Admin"
+	end 
+
 end
