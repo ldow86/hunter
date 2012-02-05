@@ -37,6 +37,24 @@ class PhotosController < ApplicationController
 		@list = Photo.paginate(:page => params[:page])
 	end 
 
+	def delete
+		@title = "Delete Photos"
+		@list = Photo.paginate(:page => params[:page])
+	end 
+
+	def deletePhotos
+		ids = params[:ids]
+		if !ids.nil?
+			params[:ids].each do |id|
+				Photo.find(id).destroy
+			end 
+			flash[:success] = "Photos deleted."
+		else 
+			flash[:error] = "Error: No photos selected."
+		end 
+		redirect_to delete_photos_path
+	end 
+
 	private 
 	
 		def authenticate
