@@ -1,6 +1,9 @@
 Hunter::Application.routes.draw do
 	get "pages/home"
 	get "pages/contact"
+	get "pages/abouthunter"
+	get "pages/aboutautism"
+	get "pages/archives"
 
 	# The priority is based upon order of creation:
 	# first created -> highest priority.
