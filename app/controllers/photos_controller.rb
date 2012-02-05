@@ -2,6 +2,8 @@ class PhotosController < ApplicationController
 
 	before_filter :authenticate, :only => [:new, :create]
 
+	caches_page :image 
+
 	def new
 		@title = "Upload Photo" 
  	end
