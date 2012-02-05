@@ -2,13 +2,13 @@
 <script type="text/javascript">
 function validateForm()
 {
-	var x=document.forms["contactForm"]["name"].value;
+	var x=document.forms["contactForm"]["petitioner"].value;
 	if (x==null || x=="") {
 		alert("Name must be filled out");
 		return false;
 	}
 
-	var y=document.forms["contactForm"]["email"].value;
+	var y=document.forms["contactForm"]["replyEmailAddress"].value;
 	if (y==null || y=="") {
 		alert("Email address must be filled out");
 		return false;
@@ -18,7 +18,7 @@ function validateForm()
 		return false;
 	}
 		
-	var z=document.forms["contactForm"]["number"].value;
+	var z=document.forms["contactForm"]["imageNumber"].value;
 	if (z==null || z=="") {
 		alert("Image Number must be filled out");
 		return false;
@@ -40,10 +40,10 @@ function validateEmail(email) {
 <p>
 	There is a small fee for permission to use Hunter's images. This fee goes towards Hunter's care. Thank you!
 </p>
-<form name="contactForm" onsubmit="//return validateForm();" method="post" action="submitContactForm">
-Your name: <br /><input type="text" name="petitioner"><br />
-Your email address: <br /><input type="text" name="replyEmailAddress"><br />
-Image Number(s): <br /><input type="text" name="imageNumber"><br />
+<form name="contactForm" onsubmit="return validateForm();" method="post" action="submitContactForm">
+Your name: <br /><input type="text" id="petitioner" name="petitioner"><br />
+Your email address: <br /><input type="text" id="replyEmailAddress" name="replyEmailAddress"><br />
+Image Number(s): <br /><input type="text" id="imageNumber" name="imageNumber"><br />
 Description of what you will be using the image for:<br /><textarea id="description"></textarea><br />
 <input type="submit" value="Submit">
 </form>
