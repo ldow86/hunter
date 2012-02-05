@@ -1,7 +1,31 @@
+<script type="text/javascript">
+$('[placeholder]').focus(function() {
+	var input = $(this);
+	if (input.val() == input.attr('placeholder')) {
+		input.val('');
+		input.removeClass('placeholder');
+	}
+}).blur(function() {
+	var input = $(this):
+	if i(input.val() == '' || input.val() == input.attr('placeholder')) {
+		input.addClass('placeholder');
+		input.val(input.attr('placeholder'));
+	}
+}).blur();
+
+$('[placeholder]').parents('form').submit(function() {
+	$(this).find('[placeholder]').each(function() {
+		var input = $(this);
+		if (input.val() == input.attr('placeholder')) {
+			input.val('');
+		}
+	})
+});
+</script>
 <h1>Upload Photos</h1>
 <p>Click browse to find the image that you want to upload. You can enter an optional caption in the second field. Click submit when you are ready to upload your image and caption. </p>
 
-<% form_for(:photo, @photo, :url=>{:action=>'create'}, :html=>
+<%= form_for(:photo, @photo, :url=>{:action=>'create'}, :html=>
 	{:multipart=>true}) do |form| %>
 
 	<% if !@photo.nil? %>
@@ -9,7 +33,7 @@
 	<% end %>
 
 	<%= form.file_field :image_file %>
-	<%= form.text_field value="Enter caption here (optional)", :description%>
+	<%= form.text_field :description, :class => "placeholder", :placeholder => "Caption(optional)" %>
 	<%= form.submit "Submit" %>
 
 <% end %>
