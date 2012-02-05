@@ -1,10 +1,15 @@
 <h1>Upload Photos</h1>
 <p>Click browse to find the image that you want to upload. You can enter an optional caption in the second field. Click submit when you are ready to upload your image and caption. </p>
 
-<% form_for(:photo, @photo, :url=>{:action=>'create'}, :html=>{:multipart=>true}) do |form| %>
+<% form_for(:photo, @photo, :url=>{:action=>'create'}, :html=>
+	{:multipart=>true}) do |form| %>
 
-<%= form.file_field :image_file %>
-<%= form.text_field :description %>
-<%= form.submit "Submit" %>
+	<% if !@photo.nil? %>
+		<%= render 'shared/error_messages', :object => @photo %>
+	<% end %>
+
+	<%= form.file_field :image_file %>
+	<%= form.text_field value="Enter caption here (optional)", :description%>
+	<%= form.submit "Submit" %>
 
 <% end %>

@@ -135,7 +135,14 @@ td.sidebar {
 	background: #ffc;
 }
 
+ul {
+	list-style-type: none;
+}
 
+#photoshow {
+	width: 300px;
+	margin: auto;
+}
 
 
 

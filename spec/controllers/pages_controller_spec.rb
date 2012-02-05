@@ -30,13 +30,6 @@ describe PagesController do
 		end 
 	end 
 
-	describe "GET 'archives'" do 
-		it "should be successful" do 
-			get 'archives'
-			response.should be_success
-		end 
-	end 
-
 	describe "GET 'admin'" do 
 		it "should be successful" do 
 			get 'admin'

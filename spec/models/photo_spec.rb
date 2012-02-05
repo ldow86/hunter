@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Photo do
 
 	before(:each) do 
-		@attr = { :filename => "Test Photo.jpg", :binary_data => "hereisastring", :content_type => "photo" }
+		@attr = { :filename => "Test Photo.jpg", :binary_data => "hereisastring", :content_type => "image/jpeg" }
 	end 
 
 	it "should create a new instance given valid attributes" do 
@@ -16,7 +16,7 @@ describe Photo do
 	end
 
 	it "should reject content_type that is not a jpg" do
-		wrong_content_type = Photo.ew(@attr.merge(:content_type => "wrongcontenttype"))
+		wrong_content_type = Photo.new(@attr.merge(:content_type => "wrongcontenttype"))
 		wrong_content_type.should_not be_valid
 	end  
 end

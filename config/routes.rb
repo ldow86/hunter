@@ -8,9 +8,10 @@ Hunter::Application.routes.draw do
 	end
 
 	match '/contact', :to => 'pages#contact'
+	match '/submitContactForm', :to => 'pages#submitContactForm'
 	match '/abouthunter', :to => 'pages#abouthunter'
 	match '/aboutautism', :to => 'pages#aboutautism'
-	match '/archives', :to => 'pages#archives'
+	match '/archives', :to => 'photos#index'
 	match '/admin', :to => 'pages#admin'
 	match '/signin', :to => 'sessions#new'
 	match '/signout', :to => 'sessions#destroy'
