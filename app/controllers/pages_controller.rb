@@ -15,11 +15,7 @@ class PagesController < ApplicationController
 	
 	def aboutautism
 		@title = "About Autism"
-	end 
-
-	def archives
-		@title = "Archives"
-	end 
+	end  
 
 	def admin
 		@title = "Admin"
