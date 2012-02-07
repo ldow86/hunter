@@ -2,6 +2,8 @@ require 'RMagick'
 
 class Photo < ActiveRecord::Base
 
+	self.per_page = 20
+
 	validates :binary_data, :presence => true
 	validates :content_type, :inclusion => { :in => ["image/jpeg"], :message => "You can only upload JPEGs" }
 
