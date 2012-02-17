@@ -6,16 +6,16 @@
 <form onsubmit="return show_confirm();" action="deletePhotos" method="post">
 <h1>Delete Photos</h1>
 <p>
-	Please note that improvements are coming soon to this page! For now however, click on the checkbox to the RIGHT of the photo you want to delete.
+	Click the checkbox for the photo or photos you wish to delete.
 </p>
 
 <%= will_paginate @list %>
 
 <ul class="deleteList">
 	<% @list.each do |photo| %>
-		<li>
+		<li class="photoObject">
 			<a href="<%= photo_path photo %>"/><%= image_tag image_photo_path(photo), :alt => photo.description, :width => 150 %></a>
-			<input type="checkbox" name="ids[]" value="<%= photo.id %>" />
+			<input type="checkbox" class="deleteCheckBoxes" name="ids[]" value="<%= photo.id %>" />
 		</li>
 	<% end %>
 </ul>
