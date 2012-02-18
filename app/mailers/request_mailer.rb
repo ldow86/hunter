@@ -6,7 +6,7 @@ class RequestMailer < ActionMailer::Base
 		@replyEmailAddress = replyEmailAddress
 		@imageNumber = imageNumber
 		@description = description
-		mail(:to => "laura.alisson86@gmail.com", :subject => "Photo use request from throughhunterseyes.com")
+		mail(:to => ["aprilsall@hotmail.com", "laura.alisson86@gmail.com"], :subject => "Photo use request from throughhunterseyes.com")
 	end 
 end
 
